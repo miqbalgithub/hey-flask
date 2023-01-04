@@ -2,6 +2,8 @@ FROM python:3.6
 
 COPY . /app/
 WORKDIR /app
-RUN chmod +x ./index.py
 
-EXPOSE 3000
+RUN pip install -r requirements.txt
+
+ENTRYPOINT ["python"]
+CMD ["app.py"]
